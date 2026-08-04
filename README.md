@@ -125,6 +125,23 @@ en un catálogo y falta en el otro.
 Los valores no llevan tildes ni eñes a propósito: el mismo archivo lo leerá la versión de
 Windows, y la consola de `cmd.exe` usa una página de códigos distinta de UTF-8.
 
+### Convenciones
+
+**El idioma del proyecto es el español.** Se escriben en español los mensajes de commit, los
+comentarios del código, la documentación y los nombres de las ramas cuando llevan descripción.
+
+Quedan **en inglés**, y esto no es una excepción arbitraria:
+
+- Los identificadores del código (funciones, variables, claves del catálogo). Cambiarlos
+  obligaría a renombrar toda la API interna y a mezclar idiomas dentro de una misma línea.
+- Los prefijos de commit y de rama: `feat:`, `fix:`, `docs:`, `chore:`, `test:`, `refactor:`.
+  Son etiquetas de [Conventional Commits](https://www.conventionalcommits.org/es/), no texto.
+- Los textos de `i18n/en.properties`, evidentemente.
+
+Los mensajes de commit anteriores a la versión 0.2.0 están mezclados en ambos idiomas: la
+convención se fijó después y reescribir la historia publicada habría costado más de lo que
+aporta.
+
 ## Licencia
 
 MIT — ver [LICENSE](LICENSE).
