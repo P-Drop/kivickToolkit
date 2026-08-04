@@ -6,6 +6,8 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es/1.0.0/) y el p
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-04
+
 Soporte para Linux y macOS. La herramienta deja de ser exclusiva de Windows.
 
 ### Añadido
@@ -85,3 +87,7 @@ etiquetada como `v0.1.0`.
 - `gui.cmd` — menú de texto con cinco opciones.
 - `scripts/change_password.bat`, `check_disk.bat`, `check_windows.bat`, `create_user.bat`,
   `shutdown_pc.bat`.
+
+[Unreleased]: https://github.com/P-Drop/kivickToolkit/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/P-Drop/kivickToolkit/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/P-Drop/kivickToolkit/releases/tag/v0.1.0
