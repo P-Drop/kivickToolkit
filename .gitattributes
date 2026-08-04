@@ -1,0 +1,21 @@
+# Normaliza los finales de linea entre Linux/macOS y Windows.
+* text=auto
+
+# Scripts de Windows: CRLF obligatorio. cmd.exe puede fallar al
+# interpretar un .bat guardado con finales de linea LF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Scripts de Unix: LF obligatorio. Con CRLF, el \r final del shebang
+# forma parte del nombre del interprete y el sistema busca un programa
+# llamado "bash\r", que no existe
+*.sh text eol=lf
+
+# Catalogos compartidos: LF. El 'for /f' de batch los lee igual.
+*.properties text eol=lf
+
+# legacy/ NO se toca. Contiene la version original preservada byte a byte
+# Aplicarle las reglas de arriba haría que git rescribiera esos archivos
+# en el próximo commit. La regla va la última porque en .gitattributes 
+# prevalece la última coincidencia.
+legacy/** -text
