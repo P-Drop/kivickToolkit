@@ -26,7 +26,7 @@ TESTS_FAILED=0
 if [ -t 1 ]; then
     C_OK=$'\033[32m'; C_KO=$'\033[31m'; C_HD=$'\033[1m'; C_NO=$'\033[0m'
 else
-    C_OK=''; C_KO='', C_HD=''; C_NO=''
+    C_OK=''; C_KO=''; C_HD=''; C_NO=''
 fi
 
 group() { printf '\n%s%s%s\n' "$C_HD" "$1" "$C_NO"; }

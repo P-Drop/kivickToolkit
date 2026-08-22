@@ -1,0 +1,40 @@
+# Logs y temporales
+*.log
+*.tmp
+*.bak
+
+# Carpetas generadas
+build/
+dist/
+output/
+temp/
+tmp/
+
+# Variables de entorno y configuración local
+.env
+.env.local
+config.local.bat
+config.local.cmd
+
+# Archivos de sistema Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Python (si aplica)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+
+# Node.js (si aplica)
+node_modules/
+package-lock.json

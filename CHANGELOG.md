@@ -6,32 +6,6 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es/1.0.0/) y el p
 
 ## [Unreleased]
 
-## [3.0.0] - 2026-08-21
-
-Implementación nativa para Windows. El proyecto pasa a ser completamente multiplataforma.
-
-### Añadido
-
-- `kivick.cmd` como lanzador para Windows, equivalente funcional de `kivick.sh`.
-- `lib/unix/win/common.cmd` como núcleo de Windows: i18n, registro de sesión, ejecución
-  de comandos, confirmación escrita, comprobación de privilegios y lectura de secretos.
-- `scripts/unix/win/` con las cinco operaciones nativas para Windows:
-  `change_password.cmd`, `check_disk.cmd`, `check_os.cmd`, `create_user.cmd`,
-  `shutdown_pc.cmd`.
-- Detección automática de idioma desde `LANG` y `Get-Culture` de PowerShell.
-- Soporte para `--dry-run` y `--lang` en el lanzador de Windows.
-- Registro de sesión en `%LOCALAPPDATA%\kivick\`, con fecha, usuario, comando y código
-  de salida.
-- Lectura de contraseñas sin eco mediante `Read-Host -AsSecureString` de PowerShell:
-  los secretos nunca aparecen en pantalla ni en los registros.
-- Comprobación de privilegios con `net session` antes de cada operación elevada.
-- Confirmación escrita obligatoria antes de crear un usuario, cambiar contraseña o apagar.
-
-### Eliminado
-
-- El directorio `legacy/` se retira: la implementación original de Windows ya está
-  integrada de forma segura en `scripts/unix/win/` y `kivick.cmd`.
-
 ## [0.2.0] - 2026-08-04
 
 Soporte para Linux y macOS. La herramienta deja de ser exclusiva de Windows.
@@ -114,7 +88,6 @@ etiquetada como `v0.1.0`.
 - `scripts/change_password.bat`, `check_disk.bat`, `check_windows.bat`, `create_user.bat`,
   `shutdown_pc.bat`.
 
-[Unreleased]: https://github.com/P-Drop/kivickToolkit/compare/v3.0.0...HEAD
-[3.0.0]: https://github.com/P-Drop/kivickToolkit/compare/v0.2.0...v3.0.0
+[Unreleased]: https://github.com/P-Drop/kivickToolkit/compare/v0.2.0...HEAD
 [0.2.0]: https://github.com/P-Drop/kivickToolkit/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/P-Drop/kivickToolkit/releases/tag/v0.1.0
