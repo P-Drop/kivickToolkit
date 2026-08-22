@@ -11,7 +11,7 @@ conservando el menú original.
 |---|---|
 | Linux | Funcional y probado |
 | macOS | Implementado, **sin verificar en máquina real** |
-| Windows | Pendiente — ver [docs/TODO_WINDOWS.md](docs/TODO_WINDOWS.md) |
+| Windows | Pendiente — ver [docs/TODO_WINDOWS.md](docs/TODO_WINDOWS.md) y [docs/REVISION_WINDOWS.md](docs/REVISION_WINDOWS.md) |
 
 La versión original de Windows se conserva en [`legacy/`](legacy/) como referencia histórica. No se ejecuta.
 
@@ -41,6 +41,8 @@ chmod +x kivick.sh
 Sin `--lang`, el idioma se deduce de `LC_ALL`, `LC_MESSAGES` o `LANG`, con inglés como alternativa por defecto.
 
 **Empieza siempre por `--dry-run`.** Muestra exactamente qué se ejecutaría sin tocar el sistema, y es la única forma segura de probar la opción de apagado.
+
+![Menú en modo simulación: se elige la opción 5, se confirma escribiendo 'si' y la herramienta muestra `Se ejecutaria: systemctl poweroff` sin llegar a apagar el equipo.](docs/assets/screenshot_power-off-simulation.png)
 
 ## Las cinco operaciones
 
@@ -141,6 +143,14 @@ Quedan **en inglés**, y esto no es una excepción arbitraria:
 Los mensajes de commit anteriores a la versión 0.2.0 están mezclados en ambos idiomas: la
 convención se fijó después y reescribir la historia publicada habría costado más de lo que
 aporta.
+
+## Autoría
+
+**Kivick Toolbox es una herramienta original de [Kivick22](https://github.com/Kivick22).** Suyos son la idea, el menú y las cinco operaciones que definen la herramienta, escritos en batch para Windows. Esa versión se conserva íntegra en [`legacy/`](legacy/), etiquetada como `v0.1.0`, y no se ha modificado en ningún momento.
+
+El port a Linux y macOS es obra de [P-Drop](https://github.com/P-Drop): la arquitectura multiplataforma, el núcleo en Bash, la interfaz bilingüe y la suite de pruebas. Se hizo respetando el menú original y las cinco operaciones que forman parte de la herramienta.
+
+La reimplementación nativa para Windows corre a cargo de Kivick22.
 
 ## Licencia
 
