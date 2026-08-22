@@ -11,7 +11,9 @@ conservando el menú original.
 |---|---|
 | Linux | Funcional y probado |
 | macOS | Implementado, **sin verificar en máquina real** |
-| Windows | Funcional — `kivick.cmd` |
+| Windows | Pendiente — ver [docs/TODO_WINDOWS.md](docs/TODO_WINDOWS.md) |
+
+La versión original de Windows se conserva en [`legacy/`](legacy/) como referencia histórica. No se ejecuta.
 
 ## Requisitos
 
@@ -22,18 +24,10 @@ conservando el menú original.
 ## Uso
 
 ```bash
-# Unix (Linux / macOS)
 git clone https://github.com/P-Drop/kivickToolkit.git
 cd kivickToolkit
 chmod +x kivick.sh
 ./kivick.sh
-```
-
-```bat
-:: Windows
-git clone https://github.com/P-Drop/kivickToolkit.git
-cd kivickToolkit
-kivick.cmd
 ```
 
 ### Opciones
@@ -87,15 +81,13 @@ Es la parte que más cuidado ha requerido, y el criterio es simple: **cuanto men
 ### Estructura
 
 ```
-kivick.sh              Lanzador y menú (Unix)
-kivick.cmd             Lanzador y menú (Windows)
-lib/unix/common.sh     Núcleo Unix: i18n, registro, ejecución, confirmación, privilegios
-lib/unix/platform.sh   Detección de SO (único archivo con ramas por plataforma)
-lib/unix/win/common.cmd  Núcleo Windows: equivalente de common.sh para CMD
-scripts/unix/*.sh      Las cinco operaciones para Unix
-scripts/unix/win/*.cmd Las cinco operaciones para Windows
-i18n/*.properties      Textos de la interfaz, compartidos entre Unix y Windows
+kivick.sh              Lanzador y menú
+lib/unix/common.sh     Núcleo: i18n, registro, ejecución, confirmación, privilegios
+lib/unix/platform.sh   Detección de sistema operativo (único archivo con ramas por SO)
+scripts/unix/*.sh      Las cinco operaciones, como módulos que se cargan con source
+i18n/*.properties      Textos de la interfaz, compartidos con la futura versión de Windows
 tests/run_tests.sh     Suite de pruebas
+legacy/                Versión original de Windows, no se ejecuta
 ```
 
 ### Invariantes
